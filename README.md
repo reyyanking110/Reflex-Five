@@ -1,31 +1,383 @@
-🧭 Architecture & Experience OverviewFIVE is an ultra-clean, single-file cognitive benchmarking platform inspired by precision telemetry instruments and 3D spatial interfaces. Rather than shipping megabytes of framework overhead, every visual layer, harmonic sound effect, physics loop, and procedural puzzle generator executes natively inside index.html.🎮 The Five Cognitive ModulesModuleTitleDomainFormatCore Mechanic01DON’T BLINKSustained Focus30s · 60s · 90sHold an unbroken stare against animated eyes; self-report any blink to trigger a Hindi detective interrogation.02REACTION ZEROVisual Reflexes5 TrialsReact the exact millisecond the viewport transitions from standby to electric green; premature clicks trigger false starts.03MEMORY MATRIXWorking Memory3 LivesReplicate expanding spatial sequences across grids scaling from 3×3 → 4×4 → 5×5.04IMPOSSIBLE COUNTVisual Tracking8 RoundsTrack and count one target geometric shape amidst drifting, pulsing, and flickering decoys on a 60fps canvas.05LOGIC LOCKDeductive Logic10 PuzzlesSolve time-pressured arithmetic, geometric, symbolic, and vector rotation matrices under streak multipliers.🔍 Deep-Dive Mechanics (Expandable Specs)Endurance Tiers: Choose between 30-second, 60-second, or 90-second focus sprints.Privacy-First Honor Protocol: Operates without webcam access. When your eyelids flicker, press the I Blinked trigger immediately.Web Speech Interrogation: Failing a run triggers a dramatic Hindi (hi-IN) detective voice-over announcement via window.speechSynthesis, accompanied by synchronized on-screen dialogue.Scoring Formula:
-$$\text{Score} = (t_{\text{survived}} \times 10) + \begin{cases} 100 & \text{if full duration completed} \\ 0 & \text{if blinked early} \end{cases}$$Randomized Phase Delays: Each of the 5 rounds holds a tense standby state for a cryptographically varied interval between 2,000 ms and 7,000 ms.Sub-Millisecond Precision: Measured using high-resolution performance.now() timestamps the instant the screen flashes #C8FF5E.False-Start Detection: Clicking before the green signal aborts the trial, penalizes momentum, and forces a round reset.Scoring Formula:
-$$\text{Score} = \sum_{r=1}^{5} \max\big(0,\; 1000 - \Delta t_r\big)$$Dynamic Grid Expansion:Levels 1 – 4: 3 × 3 Matrix (9 nodes)Levels 5 – 9: 4 × 4 Matrix (16 nodes)Levels 10+: 5 × 5 Matrix (25 nodes)Harmonic Encoding: Each tile maps to a distinct musical frequency, reinforcing visual recall with auditory memory.Three-Life Buffer: An incorrect node replays the sequence and deducts one life until all three are exhausted.Scoring Formula:
-$$\text{Score} = \sum_{L=1}^{N_{\text{cleared}}} (100 \times L)$$60fps <canvas> Simulation: Renders rotating polygons (circles, triangles, squares, diamonds, hexagons) with independent velocity vectors and elastic wall collisions.Progressive Entropy (8 Rounds): Each round increases total object count, accelerates drift speed, introduces opacity flickering, and shortens the observation window.Scoring Formula:
-$$\text{Score} = (C_{\text{exact}} \times 100) + B_{\text{early\_submission}}$$Multi-Engine Puzzle Generator: Dynamically constructs 10 sequential puzzles spanning arithmetic progressions, quadratic growth, alternating step series, symbolic algebra, and directional arrow rotations.Countdown & Streak Mechanics: Answering rapidly preserves a time bonus while consecutive solves build a score multiplier.Scoring Formula:
-$$\text{Score} = (C_{\text{solved}} \times 100) + B_{\text{remaining\_time}} + B_{\text{streak}}$$🏆 Unified Rating & Mastery MatrixEvery completed session maps your raw point total onto a calibrated cognitive rank:Score BracketRank BadgeCognitive Classification0 – 699Keep trainingBaseline neural calibration established; focus on consistency and impulse control.700 – 1,499SharpAbove-average processing speed, spatial retention, and visual filtering.1,500 – 2,799EliteHigh-precision execution with near-zero hesitation across complex stimuli.2,800+LegendaryPeak cognitive mastery—top-percentile reflexes, endurance, and deduction.🛠️ Technical Stack & Browser Subsystemsgraph LR
-    A[index.html<br/>Single-File Core] --> B[HTML5 Canvas 2D<br/>60fps Physics & Shapes]
-    A --> C[Web Audio API<br/>Procedural Oscillators]
-    A --> D[Web Speech API<br/>hi-IN Detective TTS]
-    A --> E[Web Storage API<br/>localStorage 'five1']
-    style A fill:#17191F,stroke:#C8FF5E,stroke-width:2px,color:#F5F5F5
-    style B fill:#111318,stroke:#92949D,color:#F5F5F5
-    style C fill:#111318,stroke:#92949D,color:#F5F5F5
-    style D fill:#111318,stroke:#92949D,color:#F5F5F5
-    style E fill:#111318,stroke:#92949D,color:#F5F5F5
-SubsystemNative APIEngineering ImplementationAudio SynthesizerAudioContextGenerates real-time sine, triangle, and sawtooth waveforms with exponential gain envelopes—0 KB audio files.Kinetic Renderer<canvas> + rAFHiDPI Retina-scaled 2D context with delta-time normalization (dt) for frame-rate-independent motion.Voice SynthesisspeechSynthesisTargets hi-IN system voices with tuned pitch (0.85) and rate (0.92), gracefully degrading to text if unavailable.State PersistencelocalStorageStores lifetime games played, fastest ms reflex, highest memory level, accuracy %, and last 8 runs under key five1.🚀 Quick Start & Local DeploymentNo npm install, no bundlers, and no configuration files required.# 1. Clone the repository
-git clone https://github.com/YOUR-USERNAME/five.git
-cd five
+# REFLEX
+### HOW FAR CAN YOUR MIND GO?
 
-# 2. Launch a lightweight local HTTP server
-python3 -m http.server 8080
+<p align="center">
+  <img src="./assets/hero.svg" alt="REFLEX — The Ultimate Challenge Experience" width="100%">
+</p>
 
-# 3. Open in your browser
-# → http://localhost:8080
-Tip: You can also double-click index.html directly to run FIVE offline in any modern browser.📂 Repository BlueprintFIVE/
-├── index.html          # Complete self-contained application (HTML5 + CSS3 + ES2023 Engines)
+<p align="center">
+  <strong>FIVE CHALLENGES. FIVE SKILLS. ONE MIND.</strong>
+</p>
+
+<p align="center">
+  <a href="REPLACE-WITH-YOUR-DEPLOYED-URL"><strong>PLAY REFLEX LIVE</strong></a>
+  &nbsp; • &nbsp;
+  <a href="#the-five-challenges">EXPLORE GAMES</a>
+  &nbsp; • &nbsp;
+  <a href="#getting-started">GET STARTED</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Web-111318?style=for-the-badge" alt="Platform">
+  <img src="https://img.shields.io/badge/Games-05-C8FF5E?style=for-the-badge" alt="Five games">
+  <img src="https://img.shields.io/badge/Dependencies-Zero-111318?style=for-the-badge" alt="Zero dependencies">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="MIT license">
+</p>
+
+---
+
+## 01 — Introduction
+
+**REFLEX** is a collection of five interactive mental and reaction-based challenges designed to test different aspects of human performance.
+
+It is not another ordinary collection of browser games.
+
+Every challenge focuses on a different ability, from split-second reactions to pattern recognition, concentration, observation and logical thinking.
+
+Whether you're trying to beat your personal record or discover your strongest skill, REFLEX gives you a reason to try again.
+
+**No accounts. No downloads. No unnecessary complexity. Just you and the challenge.**
+
+## 02 — The Five Challenges
+
+<p align="center">
+  <img src="./assets/games.svg" alt="Five REFLEX challenges" width="100%">
+</p>
+
+### 01. DON'T BLINK
+**FOCUS & CONCENTRATION**
+
+How long can you maintain your focus?
+
+- Choose between 30, 60 and 90-second challenges.
+- Keep your eyes open throughout the countdown.
+- Report a blink using the on-screen button or Space key.
+- Experience an entertaining detective-style Hindi voice-over when you lose.
+- Beat your previous concentration record.
+
+*Challenge: Your focus is your only advantage.*
+
+### 02. REACTION ZERO
+**REFLEXES & RESPONSE TIME**
+
+Every millisecond matters.
+
+- Five rounds per session.
+- Random waiting periods between 2 and 7 seconds.
+- React immediately when the screen turns green.
+- Early clicks count as false starts.
+- Track reaction time in milliseconds.
+- Automatically calculate your average and best reaction time.
+
+*Challenge: How fast can you react?*
+
+### 03. MEMORY MATRIX
+**MEMORY & PATTERN RECOGNITION**
+
+Watch carefully. Remember everything.
+
+- Watch a sequence of illuminated tiles.
+- Reproduce the exact sequence.
+- Each successful level adds another tile.
+- Progress through 3×3, 4×4 and 5×5 grids.
+- Three lives per session.
+- Track your highest level.
+
+*Challenge: How much can your memory handle?*
+
+### 04. IMPOSSIBLE COUNT
+**OBSERVATION & ACCURACY**
+
+Find the pattern inside the chaos.
+
+- Identify a specific geometric shape.
+- Count shapes while they move and rotate.
+- Deal with changing visual distractions.
+- Eight progressively difficult rounds.
+- Earn additional points for answering quickly.
+- Track your overall accuracy.
+
+*Challenge: Can you trust your observation?*
+
+### 05. LOGIC LOCK
+**LOGICAL THINKING & REASONING**
+
+Every pattern has an answer.
+
+- Solve generated number sequences.
+- Recognize mathematical patterns.
+- Complete symbol sequences.
+- Choose from four possible answers.
+- Work against a countdown timer.
+- Build consecutive correct-answer streaks.
+
+*Challenge: Think clearly under pressure.*
+
+---
+
+## 03 — Gameplay Experience
+
+REFLEX is designed around a simple gameplay philosophy:
+
+**Understand → Prepare → Play → Score → Improve**
+
+Every challenge includes:
+
+- Dedicated instruction screen.
+- Interactive gameplay environment.
+- Live score and progress indicators.
+- Appropriate countdown timers.
+- Immediate feedback.
+- Game-over and result screens.
+- Performance ratings.
+- Restart functionality.
+- Personal record tracking.
+
+The goal is to make every attempt feel meaningful.
+
+## 04 — Scoring System
+
+Every game uses its own scoring logic.
+
+| Game | Scoring |
+|---|---|
+| Don't Blink | 10 points per second survived, plus 100 for completion |
+| Reaction Zero | Up to 1,000 points per successful round, based on reaction time |
+| Memory Matrix | 100 × level for each cleared level |
+| Impossible Count | 100 points per correct answer plus time bonus |
+| Logic Lock | 100 points per correct answer plus time and streak bonuses |
+
+### Performance Ratings
+
+Every completed session receives one of four performance ratings:
+
+| Rating | Performance |
+|---|---|
+| Keep Training | Below 40% |
+| Sharp | 40–69% |
+| Elite | 70–89% |
+| Legendary | 90–100% |
+
+Your goal is simple: improve your performance with every attempt.
+
+## 05 — Personal Dashboard
+
+Your progress is displayed directly on the homepage.
+
+### Statistics
+
+- Total games played.
+- Best reaction time.
+- Highest memory level.
+- Overall answer accuracy.
+- Personal best for every challenge.
+- Last eight game results.
+
+### Local Data Storage
+
+REFLEX uses browser `localStorage` to preserve your progress.
+
+Your statistics remain available when you revisit the website using the same browser and storage profile.
+
+No account or remote database is required.
+
+You can also reset your statistics whenever you want.
+
+## 06 — Design Philosophy
+
+REFLEX follows a minimal, premium visual direction.
+
+The interface prioritizes readability, spacing, contrast and gameplay clarity.
+
+### Visual Identity
+
+| Design Element | Value |
+|---|---|
+| Background | `#090A0C` |
+| Secondary Background | `#111318` |
+| Cards | `#17191F` |
+| Primary Text | `#F5F5F5` |
+| Secondary Text | `#92949D` |
+| Accent | `#C8FF5E` |
+
+### Interface Principles
+
+- Dark, distraction-free interface.
+- Consistent typography.
+- Carefully balanced spacing.
+- Subtle transitions and animations.
+- Responsive layouts.
+- Minimal visual noise.
+- Clear interactive elements.
+- Consistent design across all challenges.
+
+The interface is designed to feel like a polished independent gaming product rather than a generic game template.
+
+## 07 — Technology Stack
+
+REFLEX is built using standard browser technologies.
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Structure and markup |
+| CSS3 | Layout, animations and responsive design |
+| JavaScript | Game mechanics and application logic |
+| Canvas API | Dynamic geometric rendering |
+| Web Audio API | Synthesized sound effects |
+| Web Speech API | Hindi voice-over |
+| LocalStorage | Persistent player statistics |
+
+### Zero External Dependencies
+
+The core application does not require:
+
+- React
+- Vue
+- Angular
+- Node.js
+- Backend servers
+- Database services
+- Authentication systems
+
+It runs directly in a modern web browser.
+
+## 08 — Getting Started
+
+You can run REFLEX locally without installing any dependencies.
+
+### Requirements
+
+- A modern web browser.
+- Python 3 (optional, for local HTTP serving).
+
+### Option 1 — Open Directly
+
+1. Download or clone the repository.
+2. Locate `index.html`.
+3. Open it in your browser.
+
+### Option 2 — Local HTTP Server
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/REFLEX.git
+```
+
+Enter the project directory:
+
+```bash
+cd REFLEX
+```
+
+Start a local server:
+
+```bash
+python -m http.server 8080
+```
+
+Open:
+
+```text
+http://localhost:8080
+```
+
+That's it. REFLEX is ready to play.
+
+## 09 — Project Structure
+
+```text
+REFLEX/
+│
+├── index.html
+│
 ├── assets/
-│   ├── hero.svg        # 3D isometric animated 5-tile header illustration
-│   └── games.svg       # Animated multi-module preview showcase
-└── README.md           # Documentation, mathematical scoring specs & architecture guide
-🎨 Design Tokens & Obsidian PaletteEngineered for zero eye strain and maximum focal clarity during high-speed visual tasks:TokenHexSwatchSurface Rolebg-primary#090A0CDeep obsidian viewport backgroundbg-secondary#111318Elevated containers, HUD telemetry & modalsbg-card#17191FInteractive challenge modules & stat tilestext-primary#F5F5F5High-legibility headings & active metricstext-secondary#92949DSubtitles, protocol instructions & metadataaccent-volt#C8FF5EPrimary actions, active signals & records📋 Operational NotesCamera-Free Focus: Don’t Blink respects user privacy by using manual self-reporting rather than webcam facial tracking.Browser Audio Policy: Sound synthesis unlocks automatically upon your first click or tap; toggle audio anytime via the navigation bar mute control.Hindi Voice Pack: The detective loss voice-over uses your OS/browser hi-IN speech engine (built into Chrome, Edge, and Android) and displays text subtitles on all platforms.
+│   ├── hero.svg
+│   └── games.svg
+│
+├── README.md
+│
+└── LICENSE
+```
+
+The complete application logic, interface and styling are contained in a single HTML file.
+
+## 10 — Browser Compatibility
+
+REFLEX is intended for modern browsers supporting standard HTML5 and JavaScript APIs.
+
+| Feature | Browser Requirement |
+|---|---|
+| Core gameplay | Modern JavaScript browser |
+| Sound effects | Web Audio API |
+| Hindi voice-over | Web Speech API |
+| Persistent statistics | LocalStorage |
+| Shape rendering | Canvas API |
+
+Some features, particularly voice synthesis, depend on browser and operating-system support.
+
+## 11 — Important Notes
+
+- Don't Blink currently uses manual blink reporting. It does not automatically detect blinks through a webcam.
+- Audio starts after user interaction.
+- Sound can be muted from the navigation bar.
+- Hindi voice-over availability depends on installed browser voices.
+- Progress is stored locally and may be lost if browser storage is cleared.
+- REFLEX does not require an account.
+
+## 12 — Future Roadmap
+
+REFLEX starts with five challenges, but the possibilities are much bigger.
+
+Potential future additions:
+
+- [ ] Webcam-based blink detection.
+- [ ] Daily challenge mode.
+- [ ] Global leaderboard.
+- [ ] Player profiles.
+- [ ] Achievement and badge system.
+- [ ] Additional difficulty levels.
+- [ ] More mini-games.
+- [ ] Multiplayer challenges.
+- [ ] Daily and weekly statistics.
+- [ ] Progressive Web App support.
+
+These are planned possibilities, not currently implemented features.
+
+## 13 — Contributing
+
+Ideas, improvements and bug reports are welcome.
+
+If you want to contribute:
+
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Test your implementation.
+5. Submit a pull request.
+
+Keep the code clean, the interface consistent and the gameplay enjoyable.
+
+## 14 — License
+
+This project is distributed under the MIT License.
+
+See the `LICENSE` file for details.
+
+---
+
+<p align="center">
+  <strong>REFLEX</strong>
+</p>
+
+<p align="center">
+  FIVE CHALLENGES. FIVE SKILLS. ONE MIND.
+</p>
+
+<p align="center">
+  <em>Don't just play. Test yourself.</em>
+</p>
+
+<p align="center">
+  Made with dedication.
+</p>
