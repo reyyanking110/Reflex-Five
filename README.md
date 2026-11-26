@@ -1,82 +1,31 @@
-<p align="center">
-  <img src="./assets/hero.svg" alt="FIVE. How far can your mind go? Five tiles in an isometric grid rise and light up one after another." width="100%">
-</p>
+🧭 Architecture & Experience OverviewFIVE is an ultra-clean, single-file cognitive benchmarking platform inspired by precision telemetry instruments and 3D spatial interfaces. Rather than shipping megabytes of framework overhead, every visual layer, harmonic sound effect, physics loop, and procedural puzzle generator executes natively inside index.html.🎮 The Five Cognitive ModulesModuleTitleDomainFormatCore Mechanic01DON’T BLINKSustained Focus30s · 60s · 90sHold an unbroken stare against animated eyes; self-report any blink to trigger a Hindi detective interrogation.02REACTION ZEROVisual Reflexes5 TrialsReact the exact millisecond the viewport transitions from standby to electric green; premature clicks trigger false starts.03MEMORY MATRIXWorking Memory3 LivesReplicate expanding spatial sequences across grids scaling from 3×3 → 4×4 → 5×5.04IMPOSSIBLE COUNTVisual Tracking8 RoundsTrack and count one target geometric shape amidst drifting, pulsing, and flickering decoys on a 60fps canvas.05LOGIC LOCKDeductive Logic10 PuzzlesSolve time-pressured arithmetic, geometric, symbolic, and vector rotation matrices under streak multipliers.🔍 Deep-Dive Mechanics (Expandable Specs)Endurance Tiers: Choose between 30-second, 60-second, or 90-second focus sprints.Privacy-First Honor Protocol: Operates without webcam access. When your eyelids flicker, press the I Blinked trigger immediately.Web Speech Interrogation: Failing a run triggers a dramatic Hindi (hi-IN) detective voice-over announcement via window.speechSynthesis, accompanied by synchronized on-screen dialogue.Scoring Formula:
+$$\text{Score} = (t_{\text{survived}} \times 10) + \begin{cases} 100 & \text{if full duration completed} \\ 0 & \text{if blinked early} \end{cases}$$Randomized Phase Delays: Each of the 5 rounds holds a tense standby state for a cryptographically varied interval between 2,000 ms and 7,000 ms.Sub-Millisecond Precision: Measured using high-resolution performance.now() timestamps the instant the screen flashes #C8FF5E.False-Start Detection: Clicking before the green signal aborts the trial, penalizes momentum, and forces a round reset.Scoring Formula:
+$$\text{Score} = \sum_{r=1}^{5} \max\big(0,\; 1000 - \Delta t_r\big)$$Dynamic Grid Expansion:Levels 1 – 4: 3 × 3 Matrix (9 nodes)Levels 5 – 9: 4 × 4 Matrix (16 nodes)Levels 10+: 5 × 5 Matrix (25 nodes)Harmonic Encoding: Each tile maps to a distinct musical frequency, reinforcing visual recall with auditory memory.Three-Life Buffer: An incorrect node replays the sequence and deducts one life until all three are exhausted.Scoring Formula:
+$$\text{Score} = \sum_{L=1}^{N_{\text{cleared}}} (100 \times L)$$60fps <canvas> Simulation: Renders rotating polygons (circles, triangles, squares, diamonds, hexagons) with independent velocity vectors and elastic wall collisions.Progressive Entropy (8 Rounds): Each round increases total object count, accelerates drift speed, introduces opacity flickering, and shortens the observation window.Scoring Formula:
+$$\text{Score} = (C_{\text{exact}} \times 100) + B_{\text{early\_submission}}$$Multi-Engine Puzzle Generator: Dynamically constructs 10 sequential puzzles spanning arithmetic progressions, quadratic growth, alternating step series, symbolic algebra, and directional arrow rotations.Countdown & Streak Mechanics: Answering rapidly preserves a time bonus while consecutive solves build a score multiplier.Scoring Formula:
+$$\text{Score} = (C_{\text{solved}} \times 100) + B_{\text{remaining\_time}} + B_{\text{streak}}$$🏆 Unified Rating & Mastery MatrixEvery completed session maps your raw point total onto a calibrated cognitive rank:Score BracketRank BadgeCognitive Classification0 – 699Keep trainingBaseline neural calibration established; focus on consistency and impulse control.700 – 1,499SharpAbove-average processing speed, spatial retention, and visual filtering.1,500 – 2,799EliteHigh-precision execution with near-zero hesitation across complex stimuli.2,800+LegendaryPeak cognitive mastery—top-percentile reflexes, endurance, and deduction.🛠️ Technical Stack & Browser Subsystemsgraph LR
+    A[index.html<br/>Single-File Core] --> B[HTML5 Canvas 2D<br/>60fps Physics & Shapes]
+    A --> C[Web Audio API<br/>Procedural Oscillators]
+    A --> D[Web Speech API<br/>hi-IN Detective TTS]
+    A --> E[Web Storage API<br/>localStorage 'five1']
+    style A fill:#17191F,stroke:#C8FF5E,stroke-width:2px,color:#F5F5F5
+    style B fill:#111318,stroke:#92949D,color:#F5F5F5
+    style C fill:#111318,stroke:#92949D,color:#F5F5F5
+    style D fill:#111318,stroke:#92949D,color:#F5F5F5
+    style E fill:#111318,stroke:#92949D,color:#F5F5F5
+SubsystemNative APIEngineering ImplementationAudio SynthesizerAudioContextGenerates real-time sine, triangle, and sawtooth waveforms with exponential gain envelopes—0 KB audio files.Kinetic Renderer<canvas> + rAFHiDPI Retina-scaled 2D context with delta-time normalization (dt) for frame-rate-independent motion.Voice SynthesisspeechSynthesisTargets hi-IN system voices with tuned pitch (0.85) and rate (0.92), gracefully degrading to text if unavailable.State PersistencelocalStorageStores lifetime games played, fastest ms reflex, highest memory level, accuracy %, and last 8 runs under key five1.🚀 Quick Start & Local DeploymentNo npm install, no bundlers, and no configuration files required.# 1. Clone the repository
+git clone https://github.com/YOUR-USERNAME/five.git
+cd five
 
-<p align="center">
-  <a href="https://REPLACE-WITH-YOUR-URL"><b>Play FIVE in your browser</b></a>
-</p>
-
-FIVE is five short challenges that each test a different part of how you think: reflexes, focus, memory, observation and logic. Every run is scored and rated, and your personal bests are kept on your device. There is no account and nothing to install.
-
-## The challenges
-
-<img src="./assets/games.svg" alt="The five challenges: Don’t Blink, Reaction Zero, Memory Matrix, Impossible Count and Logic Lock, each with a small animated preview." width="100%">
-
-| Challenge | Tests | How it plays |
-| --- | --- | --- |
-| Don’t Blink | Focus | Hold a stare for 30, 60 or 90 seconds. Press the button the moment you blink and a detective-style Hindi voice-over announces that you've lost. |
-| Reaction Zero | Reflexes | Five rounds. After a random wait of 2 to 7 seconds the screen turns green and you tap as fast as you can. Tapping early is a false start and the round restarts. |
-| Memory Matrix | Memory | Repeat a growing sequence of tiles. The grid steps up from 3×3 to 4×4 at level 5 and to 5×5 at level 10. You have three lives. |
-| Impossible Count | Observation | Count one shape while the others drift, flicker and pulse. Eight rounds, each with more shapes, faster movement and less viewing time. |
-| Logic Lock | Logic | Ten generated puzzles built from number and symbol patterns. Pick the missing piece from four answers before the timer runs out. |
-
-## Scoring and stats
-
-Each game has its own score:
-
-- **Don’t Blink** gives 10 points per second you last, plus 100 for finishing.
-- **Reaction Zero** gives 1000 minus your reaction time in milliseconds, per round.
-- **Memory Matrix** gives 100 points times the level for every level you clear.
-- **Impossible Count** gives 100 points per correct count, plus a bonus for answering early.
-- **Logic Lock** gives 100 points per correct answer, plus a time bonus and a streak bonus.
-
-Every run ends with one of four ratings: Keep training, Sharp, Elite or Legendary.
-
-The dashboard shows games played, best reaction time, memory level record, overall accuracy, a personal best for each game and your last eight results. All of it is stored in your browser's `localStorage` under the key `five1`. The Reset stats button clears it.
-
-## Run it locally
-
-FIVE is a single HTML file with no build step. Open `index.html` in a browser, or serve the folder:
-
-```bash
+# 2. Launch a lightweight local HTTP server
 python3 -m http.server 8080
-```
 
-Then go to `http://localhost:8080`.
-
-## Project structure
-
-```
-.
-├── index.html        the whole game: markup, styles and logic
+# 3. Open in your browser
+# → http://localhost:8080
+Tip: You can also double-click index.html directly to run FIVE offline in any modern browser.📂 Repository BlueprintFIVE/
+├── index.html          # Complete self-contained application (HTML5 + CSS3 + ES2023 Engines)
 ├── assets/
-│   ├── hero.svg      animated header used in this README
-│   └── games.svg     animated challenge previews used in this README
-└── README.md
-```
-
-## Built with
-
-Plain HTML, CSS and JavaScript, with no framework and no dependencies.
-
-- Sound effects are synthesised with the Web Audio API, so there are no audio files.
-- Impossible Count is drawn on a `<canvas>`.
-- The Don’t Blink voice-over uses the Web Speech API.
-- Stats use `localStorage`.
-
-## Notes
-
-- Don’t Blink does not use the camera. It is a manual mode where you report your own blink.
-- Audio only starts after your first click or tap, and there is a mute button in the navigation bar.
-- The voice-over needs a Hindi voice installed in your browser or operating system. Without one, the line appears as text only.
-
-## Colors
-
-| Role | Value |
-| --- | --- |
-| Background | `#090A0C` |
-| Secondary | `#111318` |
-| Card | `#17191F` |
-| Primary text | `#F5F5F5` |
-| Secondary text | `#92949D` |
-| Accent | `#C8FF5E` |
+│   ├── hero.svg        # 3D isometric animated 5-tile header illustration
+│   └── games.svg       # Animated multi-module preview showcase
+└── README.md           # Documentation, mathematical scoring specs & architecture guide
+🎨 Design Tokens & Obsidian PaletteEngineered for zero eye strain and maximum focal clarity during high-speed visual tasks:TokenHexSwatchSurface Rolebg-primary#090A0CDeep obsidian viewport backgroundbg-secondary#111318Elevated containers, HUD telemetry & modalsbg-card#17191FInteractive challenge modules & stat tilestext-primary#F5F5F5High-legibility headings & active metricstext-secondary#92949DSubtitles, protocol instructions & metadataaccent-volt#C8FF5EPrimary actions, active signals & records📋 Operational NotesCamera-Free Focus: Don’t Blink respects user privacy by using manual self-reporting rather than webcam facial tracking.Browser Audio Policy: Sound synthesis unlocks automatically upon your first click or tap; toggle audio anytime via the navigation bar mute control.Hindi Voice Pack: The detective loss voice-over uses your OS/browser hi-IN speech engine (built into Chrome, Edge, and Android) and displays text subtitles on all platforms.
